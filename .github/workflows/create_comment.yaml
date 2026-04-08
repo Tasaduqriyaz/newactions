@@ -5,6 +5,8 @@ on:
 jobs:
   comment_with_actions:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write  #  required to post comments
     steps:
       - name: "dump json content"
         run: echo '${{ toJSON(github.event) }}' | jq
